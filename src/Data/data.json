@@ -1,0 +1,97 @@
+{
+    "Projects": [
+        {
+            "id": 1,
+            "img": "../image/Butterflyweb.png",
+            "link": "https://butterflysagar.netlify.app/",
+            "title": "butterfly",
+            "button": "Quick View"
+        },
+        {
+            "id": 2,
+            "img": "../image/grocerys.png",
+            "link": "https://grocerys.netlify.app/",
+            "title": "Grocery",
+            "button": "Quick View"
+        },
+        {
+            "id": 3,
+            "img": "../image/Flone.png",
+            "link": "https://productsapp1.netlify.app/",
+            "title": "Flone",
+            "button": "Quick View"
+        },
+        {
+            "id": 4,
+            "img": "../image/simple-practicalweb.png",
+            "link": "https://simple-practical.netlify.app/",
+            "title": "MoGO",
+            "button": "Quick View"
+        },
+        {
+            "id": 5,
+            "img": "../image/maesto.png",
+            "link": "https://maestropizza.netlify.app/",
+            "title": "Meastro Pizza",
+            "button": "Quick View"
+        },
+        {
+            "id": 6,
+            "img": "../image/Foodbar.png",
+            "link": "https://pizza-food-delivery.netlify.app/",
+            "title": "Pizza Delivery",
+            "button": "Quick View"
+        },
+        {
+            "id": 7,
+            "img": "../image/Divine-Hub.png",
+            "link": "https://co-workingspace.netlify.app/",
+            "title": "Co Working Space",
+            "button": "Quick View"
+        },
+        {
+            "id": 8,
+            "img": "../image/SAATA.png",
+            "link": "https://saata.netlify.app/",
+            "title": "Saata",
+            "button": "Quick View"
+        }
+    ],
+    "whatICanDO":[
+        {
+            "id":1,
+            "img":"../image/html.png",
+            "brand":"HTML"
+        },
+        {
+            "id":"2",
+            "img":"../image/css.png",
+            "brand":"CSS"
+        },
+        {
+            "id":3,
+            "img":"../image/Js.png",
+            "brand":"JAVASCRIPT"
+        },
+        {
+            "id":"4",
+            "img":"../image/jquery.png",
+            "brand":"JQUERY"
+        },
+        {
+            "id":5,
+            "img":"../image/react.png",
+            "brand":"REACT"
+        },
+        {
+            "id":"6",
+            "img":"../image/Bootstrap_logo.svg.png",
+            "brand":"BOOTSTRAP"
+        },
+        {
+            "id":"7",
+            "img":"../image/contentful.png",
+            "brand":"CONTENT FUL"
+        }
+    ]
+}
