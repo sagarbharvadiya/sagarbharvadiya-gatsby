@@ -526,7 +526,7 @@ section#contact {
 
 /* footer css */
 #footer {
-  /* background: url("./image/footer-bgnew.jfif") top center no-repeat; */
+  background: url("./src/image/footer-bgnew.jpg") top center no-repeat;
   background-size: cover;
   color: #fff;
   font-size: 14px;
