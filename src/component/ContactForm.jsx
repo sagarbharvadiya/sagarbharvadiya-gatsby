@@ -44,8 +44,13 @@ const ContactForm = () => {
   };
   return (
     <>
-     { errorMessage && <p>{errorMessage}</p>}
-      <form className="php-email-form" ref={formRef} onSubmit={handleSubmit}>
+      {errorMessage && <p>{errorMessage}</p>}
+      <form
+        className="php-email-form"
+        ref={formRef}
+        onSubmit={handleSubmit}
+        data-netlify="true"
+      >
         <div className="row">
           <div className="col-md-6 form-group">
             <input
