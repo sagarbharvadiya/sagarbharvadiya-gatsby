@@ -1,6 +1,7 @@
 import React from 'react'
 import ContactForm from './ContactForm'
 import Map from './Map'
+import ContactFormNew from './ContactFormNew'
 const Contact = () => {
     return (
         <>
@@ -16,7 +17,8 @@ const Contact = () => {
                             <Map/>
                         </div>
                         <div className="col-lg-6">
-                           <ContactForm/>
+                           {/* <ContactForm/> */}
+                           <ContactFormNew/>
                         </div>
 
                     </div>
