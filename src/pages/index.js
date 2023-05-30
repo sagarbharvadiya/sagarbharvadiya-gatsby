@@ -13,5 +13,5 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head = () => (
-  <title>Sagar Bharvadiya</title>
+  <title>sagarbharvadiya</title>
 );
