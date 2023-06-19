@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 const Footer = () => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
-  const fullText = 'Bharvadiya';
+  const fullText = "Bharvadiya";
   const repeatCount = 5; // Set the desired number of repetitions
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const Footer = () => {
   useEffect(() => {
     if (currentCharIndex === fullText.length && repeatCount > 1) {
       const timeout = setTimeout(() => {
-        setText('');
+        setText("");
         setCurrentCharIndex(0);
       }, 4000); // Set a delay of 1 second before restarting
 
@@ -37,21 +37,52 @@ const Footer = () => {
         )}
         {/* <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> */}
         <div className="social-links">
-          <a href="https://github.com/sagarbharvadiya/" rel="noreferrer" target="_blank" className="github"><i className="fa-brands fa-github"></i></a>
-          <a href="https://www.instagram.com/sagar__yadav__dwarka" rel="noreferrer" target="_blank" className="instagram"><i className="fa-brands fa-instagram"></i></a>
-          <a href="https://join.skype.com/invite/wndzoaqlmJUE" rel="noreferrer" target="_blank" className="google-plus"><i className="fa-brands fa-skype"></i></a>
-          <a href="https://www.linkedin.com/in/sagar-bharvadiya-dwarka/" rel="noreferrer" target="_blank" className="linkedin"><i className="fa-brands fa-linkedin"></i></a>
+          <a
+            href="https://github.com/sagarbharvadiya/"
+            rel="noreferrer"
+            target="_blank"
+            className="github"
+          >
+            <i className="fa-brands fa-github"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/sagar__yadav__dwarka"
+            rel="noreferrer"
+            target="_blank"
+            className="instagram"
+          >
+            <i className="fa-brands fa-instagram"></i>
+          </a>
+          <a
+            href="https://join.skype.com/invite/wndzoaqlmJUE"
+            rel="noreferrer"
+            target="_blank"
+            className="google-plus"
+          >
+            <i className="fa-brands fa-skype"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/sagar-bharvadiya-dwarka/"
+            rel="noreferrer"
+            target="_blank"
+            className="linkedin"
+          >
+            <i className="fa-brands fa-linkedin"></i>
+          </a>
         </div>
         <div className="copyright">
           &copy; Copyright
-          <strong><span>sagar</span></strong>. All Rights Reserved
+          <strong>
+            <span> sagar</span>
+          </strong>
+          . All Rights Reserved 2023
         </div>
         <div className="credits">
-          Designed by  <span>Sagar Bharvadiya</span>
+          Designed by <span>Sagar Bharvadiya</span>
         </div>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
