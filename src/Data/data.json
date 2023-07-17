@@ -57,41 +57,49 @@
             "button": "Quick View"
         }
     ],
-    "whatICanDO":[
+    "whatICanDO": [
         {
-            "id":1,
-            "img":"../image/html.png",
-            "brand":"HTML"
+            "id": 1,
+            "img": "../image/drupal.svg",
+            "brand": "HTML"
         },
         {
-            "id":"2",
-            "img":"../image/css.png",
-            "brand":"CSS"
+            "id": "2",
+            "img": "../image/Group 4.png",
+            "brand": "CSS"
         },
         {
-            "id":3,
-            "img":"../image/Js.png",
-            "brand":"JAVASCRIPT"
+            "id": 3,
+            "img": "../image/Group 1.png",
+            "brand": "JAVASCRIPT"
         },
         {
-            "id":"4",
-            "img":"../image/jquery.png",
-            "brand":"JQUERY"
+            "id": "4",
+            "img": "../image/contentful-logo-vector.svg",
+            "brand": "JQUERY"
         },
         {
-            "id":5,
-            "img":"../image/react.png",
-            "brand":"REACT"
+            "id": 5,
+            "img": "../image/Group 2.png",
+            "brand": "REACT"
         },
         {
-            "id":"6",
-            "img":"../image/Bootstrap_logo.svg.png",
-            "brand":"BOOTSTRAP"
+            "id": "6",
+            "img": "../image/html5.svg",
+            "brand": "BOOTSTRAP"
         },
         {
-            "id":"7",
-            "img":"../image/contentful.png",
-            "brand":"CONTENT FUL"
+            "id": "7",
+            "img": "../image/bootstrap.svg",
+            "brand": "CONTENT FUL"
+        },
+        {
+            "id": "8",
+            "img": "../image/Group 3.png"
+        },
+        {
+            "id": "9",
+            "img": "../image/adobe-photoshop.svg"
         }
     ]
 }
