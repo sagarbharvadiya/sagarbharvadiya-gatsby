@@ -40,9 +40,9 @@ const WhatIDo = () => {
                                         <div className="what-i-do-image">
                                             <img src={item.img} alt="HTML" />
                                             <br />
-                                            <div className='brand'>
+                                            {/* <div className='brand'>
                                                 <b>{item.brand}</b>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </React.Fragment>
                                 )

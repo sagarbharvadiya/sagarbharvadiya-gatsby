@@ -38,7 +38,7 @@ const Footer = () => {
         {/* <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> */}
         <div className="social-links">
           <a
-            href="https://github.com/sagarbharvadiya/"
+            href="https://bit.ly/sagar-github"
             rel="noreferrer"
             target="_blank"
             className="github"
@@ -46,7 +46,7 @@ const Footer = () => {
             <i className="fa-brands fa-github"></i>
           </a>
           <a
-            href="https://www.instagram.com/sagar__yadav__dwarka"
+            href="https://bit.ly/sagar-instagram"
             rel="noreferrer"
             target="_blank"
             className="instagram"
@@ -54,7 +54,7 @@ const Footer = () => {
             <i className="fa-brands fa-instagram"></i>
           </a>
           <a
-            href="https://join.skype.com/invite/wndzoaqlmJUE"
+            href="https://bit.ly/sagar-skype"
             rel="noreferrer"
             target="_blank"
             className="google-plus"
@@ -62,7 +62,7 @@ const Footer = () => {
             <i className="fa-brands fa-skype"></i>
           </a>
           <a
-            href="https://www.linkedin.com/in/sagar-bharvadiya-dwarka/"
+            href="https://bit.ly/sagar-linkedin"
             rel="noreferrer"
             target="_blank"
             className="linkedin"
