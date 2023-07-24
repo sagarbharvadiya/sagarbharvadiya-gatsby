@@ -60,46 +60,39 @@
     "whatICanDO": [
         {
             "id": 1,
-            "img": "../image/drupal.svg",
-            "brand": "HTML"
+            "img": "../image/Group 4.png"
+            
         },
         {
             "id": "2",
-            "img": "../image/Group 4.png",
-            "brand": "CSS"
+            "img": "../image/Group 1.png"
+           
         },
         {
             "id": 3,
-            "img": "../image/Group 1.png",
-            "brand": "JAVASCRIPT"
+            "img": "../image/drupal.svg"
         },
         {
             "id": "4",
-            "img": "../image/contentful-logo-vector.svg",
-            "brand": "JQUERY"
+            "img": "../image/contentful-logo-vector.svg"
         },
         {
             "id": 5,
-            "img": "../image/Group 2.png",
-            "brand": "REACT"
+            "img": "../image/html5.svg"
         },
         {
             "id": "6",
-            "img": "../image/html5.svg",
-            "brand": "BOOTSTRAP"
+            "img": "../image/bootstrap.svg"
+          
         },
         {
             "id": "7",
-            "img": "../image/bootstrap.svg",
-            "brand": "CONTENT FUL"
+            "img": "../image/adobe-photoshop.svg"
         },
         {
             "id": "8",
             "img": "../image/Group 3.png"
-        },
-        {
-            "id": "9",
-            "img": "../image/adobe-photoshop.svg"
         }
+   
     ]
 }
