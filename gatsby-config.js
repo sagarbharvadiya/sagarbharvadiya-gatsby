@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: "src/images/icon.png",
+        icon: "src/image/favicon.png",
       },
     },
     "gatsby-plugin-mdx",
@@ -25,10 +25,10 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: `${__dirname}/src/images/`,
+        name: "image",
+        path: `${__dirname}/src/image/`,
       },
-      __key: "images",
+      __key: "image",
     },
     {
       resolve: 'gatsby-source-filesystem',
