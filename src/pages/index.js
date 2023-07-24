@@ -1,11 +1,12 @@
-import * as React from "react";
+import React from 'react';
+import Meta from "../component/Meta";
 import Home from './Home';
 import '../../styles.css';
 
 const IndexPage = () => {
   return (
     <main>
-      <Home/>
+      <Home />
     </main>
   );
 };
@@ -13,5 +14,8 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head = () => (
-  <title>sagarbharvadiya</title>
+  <>
+    <title>sagarbharvadiya</title>
+    <Meta />
+  </>
 );

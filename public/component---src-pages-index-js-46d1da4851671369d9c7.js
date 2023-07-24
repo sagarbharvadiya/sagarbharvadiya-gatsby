@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunksagarbharvadiya=self.webpackChunksagarbharvadiya||[]).push([[678],{6558:function(a,e,t){t.r(e),t.d(e,{Head:function(){return r}});var n=t(7294),l=t(7780);e.default=()=>n.createElement("main",null,n.createElement(l.default,null));const r=()=>n.createElement("title",null,"sagarbharvadiya")}}]);
-//# sourceMappingURL=component---src-pages-index-js-46d1da4851671369d9c7.js.map

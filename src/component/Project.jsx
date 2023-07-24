@@ -13,7 +13,7 @@ const Project = () => {
                   <div className='col-lg-3'>
                     <div className='box'>
                       <div className="image-container">
-                        <img src={item.img} alt="" />
+                        <img src={item.img} alt={item.title} />
                       </div>
                       <div className='det'>
                         <h3>{item.title}</h3>

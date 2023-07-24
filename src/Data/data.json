@@ -2,104 +2,97 @@
     "Projects": [
         {
             "id": 1,
-            "img": "../image/Butterflyweb.png",
+            "img": "../image/butterfly.svg",
             "link": "https://butterflysagar.netlify.app/",
             "title": "butterfly",
             "button": "Quick View"
         },
         {
             "id": 2,
-            "img": "../image/grocerys.png",
+            "img": "../image/Grocery.svg",
             "link": "https://grocerys.netlify.app/",
             "title": "Grocery",
             "button": "Quick View"
         },
         {
             "id": 3,
-            "img": "../image/Flone.png",
+            "img": "../image/Flone.svg",
             "link": "https://productsapp1.netlify.app/",
             "title": "Flone",
             "button": "Quick View"
         },
         {
             "id": 4,
-            "img": "../image/simple-practicalweb.png",
+            "img": "../image/MoGO.svg",
             "link": "https://simple-practical.netlify.app/",
             "title": "MoGO",
             "button": "Quick View"
         },
         {
             "id": 5,
-            "img": "../image/maesto.png",
+            "img": "../image/Meastro Pizza.svg",
             "link": "https://maestropizza.netlify.app/",
             "title": "Meastro Pizza",
             "button": "Quick View"
         },
         {
             "id": 6,
-            "img": "../image/Foodbar.png",
+            "img": "../image/Pizza Delivery.svg",
             "link": "https://pizza-food-delivery.netlify.app/",
             "title": "Pizza Delivery",
             "button": "Quick View"
         },
         {
             "id": 7,
-            "img": "../image/Divine-Hub.png",
+            "img": "../image/Co Working Space.svg",
             "link": "https://co-workingspace.netlify.app/",
             "title": "Co Working Space",
             "button": "Quick View"
         },
         {
             "id": 8,
-            "img": "../image/SAATA.png",
-            "link": "https://saata.netlify.app/",
-            "title": "Saata",
+            "img": "../image/Travel o Style.svg",
+            "link": "https://travelostyle.netlify.app/",
+            "title": "Travel o Style",
             "button": "Quick View"
         }
     ],
     "whatICanDO": [
         {
             "id": 1,
-            "img": "../image/drupal.svg",
-            "brand": "HTML"
+            "img": "../image/Group 4.png"
+            
         },
         {
             "id": "2",
-            "img": "../image/Group 4.png",
-            "brand": "CSS"
+            "img": "../image/Group 1.png"
+           
         },
         {
             "id": 3,
-            "img": "../image/Group 1.png",
-            "brand": "JAVASCRIPT"
+            "img": "../image/drupal.svg"
         },
         {
             "id": "4",
-            "img": "../image/contentful-logo-vector.svg",
-            "brand": "JQUERY"
+            "img": "../image/contentful-logo-vector.svg"
         },
         {
             "id": 5,
-            "img": "../image/Group 2.png",
-            "brand": "REACT"
+            "img": "../image/html5.svg"
         },
         {
             "id": "6",
-            "img": "../image/html5.svg",
-            "brand": "BOOTSTRAP"
+            "img": "../image/bootstrap.svg"
+          
         },
         {
             "id": "7",
-            "img": "../image/bootstrap.svg",
-            "brand": "CONTENT FUL"
+            "img": "../image/adobe-photoshop.svg"
         },
         {
             "id": "8",
             "img": "../image/Group 3.png"
-        },
-        {
-            "id": "9",
-            "img": "../image/adobe-photoshop.svg"
         }
+   
     ]
 }
