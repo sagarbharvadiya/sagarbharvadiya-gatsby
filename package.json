@@ -19,7 +19,7 @@
     "@mdx-js/react": "^2.3.0",
     "bootstrap": "^5.2.3",
     "dotenv": "^16.0.3",
-    "firebase": "^9.22.1",
+    "firebase": "^9.23.0",
     "font-awesome": "^4.7.0",
     "gatsby": "^5.10.0",
     "gatsby-plugin-image": "^3.10.0",
@@ -37,7 +37,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "react-modal": "^3.16.1",
     "react-slick": "^0.29.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "validator": "^13.9.0"
   }
 }
