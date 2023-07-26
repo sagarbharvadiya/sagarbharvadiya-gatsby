@@ -516,7 +516,7 @@ section#contact {
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.contact .php-email-form button[type=submit] {
+.php-email-form button[type=submit] {
   background: #ffb727;
   border: 0;
   padding: 10px 24px;
@@ -524,7 +524,6 @@ section#contact {
   transition: 0.4s;
   border-radius: 5px;
 }
-
 /* footer css */
 #footer {
   background: url("./src/image/footer-bgnew.jpg") top center no-repeat;
@@ -779,4 +778,26 @@ section#contact {
     padding: 20px 0px 17px 15px;
   }
 
+}
+
+.modal_box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 30px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.close_button {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
 }
