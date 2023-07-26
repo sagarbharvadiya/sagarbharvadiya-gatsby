@@ -3,6 +3,7 @@
         {
             "id": 1,
             "img": "../image/butterfly.svg",
+            "video": "../video/Butterfly.mp4",
             "link": "https://butterflysagar.netlify.app/",
             "title": "butterfly",
             "button": "Quick View"
@@ -10,6 +11,7 @@
         {
             "id": 2,
             "img": "../image/Grocery.svg",
+            "video": "../video/Grocery.mp4",
             "link": "https://grocerys.netlify.app/",
             "title": "Grocery",
             "button": "Quick View"
@@ -17,6 +19,7 @@
         {
             "id": 3,
             "img": "../image/Flone.svg",
+            "video": "../video/Flone.mp4",
             "link": "https://productsapp1.netlify.app/",
             "title": "Flone",
             "button": "Quick View"
@@ -24,6 +27,7 @@
         {
             "id": 4,
             "img": "../image/MoGO.svg",
+            "video": "../video/MoGO.mp4",
             "link": "https://simple-practical.netlify.app/",
             "title": "MoGO",
             "button": "Quick View"
@@ -31,6 +35,7 @@
         {
             "id": 5,
             "img": "../image/Meastro Pizza.svg",
+            "video": "../video/Meastro Pizza.mp4",
             "link": "https://maestropizza.netlify.app/",
             "title": "Meastro Pizza",
             "button": "Quick View"
@@ -38,6 +43,7 @@
         {
             "id": 6,
             "img": "../image/Pizza Delivery.svg",
+            "video": "../video/Pizza Delivery.mp4",
             "link": "https://pizza-food-delivery.netlify.app/",
             "title": "Pizza Delivery",
             "button": "Quick View"
@@ -45,6 +51,7 @@
         {
             "id": 7,
             "img": "../image/Co Working Space.svg",
+            "video": "../video/Co Working Space.mp4",
             "link": "https://co-workingspace.netlify.app/",
             "title": "Co Working Space",
             "button": "Quick View"
@@ -52,6 +59,7 @@
         {
             "id": 8,
             "img": "../image/Travel o Style.svg",
+            "video": "../video/Travel o Style.mp4",
             "link": "https://travelostyle.netlify.app/",
             "title": "Travel o Style",
             "button": "Quick View"
@@ -61,12 +69,10 @@
         {
             "id": 1,
             "img": "../image/Group 4.png"
-            
         },
         {
             "id": "2",
             "img": "../image/Group 1.png"
-           
         },
         {
             "id": 3,
@@ -83,7 +89,6 @@
         {
             "id": "6",
             "img": "../image/bootstrap.svg"
-          
         },
         {
             "id": "7",
@@ -93,6 +98,5 @@
             "id": "8",
             "img": "../image/Group 3.png"
         }
-   
     ]
 }
