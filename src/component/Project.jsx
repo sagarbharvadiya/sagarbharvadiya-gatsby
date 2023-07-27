@@ -1,18 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import dataJson from "../Data/data.json";
 
 const Project = () => {
-  const [showVideo, setShowVideo] = useState(true);
-  const [isLoading, setIsLoading] = useState(true); // Add state for loading status
-
-  const handleVideoEnd = () => {
-    setShowVideo(false);
-  };
-
-  const handleMediaLoad = () => {
-    setIsLoading(false);
-  };
-
   return (
     <>
       <section id="projects">
@@ -26,32 +15,7 @@ const Project = () => {
                     <a href={item.link} target="_blank" rel="no-referrer">
                       <div className="box">
                         <div className="image-container">
-                          {showVideo ? (
-                            <video
-                              autoPlay
-                              muted
-                              id="video-background"
-                              className={`h-auto ${isLoading ? "hidden" : ""}`}
-                              width="100%"
-                              onEnded={handleVideoEnd}
-                              onLoadedData={handleMediaLoad}
-                              preload="auto" // Add the preload attribute
-                            >
-                              <source src={item.video} type="video/mp4" />
-                              {/* Add additional source tags for other formats if needed */}
-                            </video>
-                          ) : (
-                            <img
-                              src={item.img}
-                              alt={item.title}
-                              className={isLoading ? "hidden" : ""} // Hide image while loading
-                              onLoad={handleMediaLoad} // Call when the image is loaded
-                            />
-                          )}
-                          {isLoading && (
-                            <div className="loader">Loading...</div>
-                          )}{" "}
-                          {/* Show loader while loading */}
+                          <img src={item.img} alt={item.title} />
                         </div>
                         <div className="det">
                           <h3>{item.title}</h3>
