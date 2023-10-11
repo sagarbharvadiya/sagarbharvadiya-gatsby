@@ -1,20 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import client from "../client";
 
 const AboutUs = () => {
-    return (
-        <div className="about-us-section"  id="about">
-            <div className="about-us-wrapper">
+  const [menuItems, setMenuItems] = useState([]);
+
+  useEffect(() => {
+    async function getMenuItems() {
+      const entries = await client.getEntries({
+        content_type: "bannerSection",
+        "sys.id":"7ERyLjnWxetzZAXhIwelBz"
+      });
+      setMenuItems(entries.items);
+      console.log(entries);
+    }
+    getMenuItems();
+  }, []);
+  return (
+    <>
+      {menuItems.map((items, i) => {
+        const { title, description, button, link } = items.fields;
+        const { id } = items.sys;
+        const image = items.fields.image.fields.file.url;
+        const richTextContent = documentToReactComponents(description);
+        return (
+          <React.Fragment key={id}>
+            <div className="about-us-section" id="about">
+              <div className="about-us-wrapper">
                 <div className="about-us-right-section">
-                    <img src="../image/ezgif.com-gif-maker.gif" alt="About Us"  />
+                  <img src={image} alt="About Us" />
                 </div>
                 <div className="about-us-left-section ">
-                    <h2>About</h2>
-                    <p>        I'm a Frontend UI Developer at <b>Krushna53</b>  with 1.7 years of experience in building beautiful and functional web interfaces.
-                        I have strong knowledge of HTML, CSS, JavaScript, jQuery, Bootstrap, React JS, SCSS, Figma, Contentful, Drupal, and other web technologies. I am passionate about creating responsive and accessible designs that provide a great user experience.</p>
+                  <h2>{title}</h2>
+                {richTextContent}
                 </div>
+              </div>
             </div>
-        </div>
-    );
+          </React.Fragment>
+        );
+      })}
+    </>
+  );
 };
 
 export default AboutUs;

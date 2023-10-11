@@ -306,6 +306,11 @@ body {
   margin: auto;
 }
 
+.slick-prev,
+.slick-next {
+  z-index: 222;
+}
+
 /* Project css */
 
 #projects {
