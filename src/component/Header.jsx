@@ -1,7 +1,20 @@
-import React, { useState } from "react";
-// import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import client from "../client";
 
 function Header() {
+  const [menuItems, setMenuItems] = useState([]);
+
+  useEffect(() => {
+    async function getMenuItems() {
+      const entries = await client.getEntries({
+        content_type: "navbarComponent",
+      });
+      setMenuItems(entries.items);
+      console.log(entries);
+    }
+    getMenuItems();
+  }, []);
+
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNav = () => {
@@ -21,32 +34,13 @@ function Header() {
       <div className="nav_new">
         <nav className={`header__nav ${isNavOpen ? "open" : ""}`}>
           <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              {/* <a
-              href={process.env.REACT_APP_RESUME_LINK}
-              target="_blank"
-              rel="noreferrer"
-            > */}
-              <a
-                href="../image/SagarBharvadiyaResume.pdf"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Resume
-              </a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
+            {menuItems.map((items) => (
+              <li key={items.sys.id}>
+                <a href={items.fields.link}>
+                  {items.fields.menu}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
         <div className="social">
