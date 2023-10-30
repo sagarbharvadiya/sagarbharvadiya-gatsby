@@ -7,6 +7,9 @@ module.exports = {
     title: `/sagarbharvadiya`,
     siteUrl: `https://sagarbharvadiya.com/`,
   },
+  flags: {
+    DEV_SSR: true
+  },
   plugins: [
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-postcss",
