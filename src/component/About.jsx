@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
+// import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import client from "../client";
 
@@ -20,7 +20,7 @@ const AboutUs = () => {
   return (
     <>
       {menuItems.map((items, i) => {
-        const { title, description, button, link } = items.fields;
+        const { title, description } = items.fields;
         const { id } = items.sys;
         const image = items.fields.image.fields.file.url;
         const richTextContent = documentToReactComponents(description);
