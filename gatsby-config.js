@@ -18,7 +18,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: "src/image/favicon.png",
+        name: 'sagarbharvadiya',
+        display: 'standalone',
+        icon: 'src/image/favicon.png',
       },
     },
     "gatsby-plugin-mdx",
