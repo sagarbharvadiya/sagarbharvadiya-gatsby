@@ -10,7 +10,7 @@ const Project = () => {
         content_type: "projects",
       });
       setMenuItems(entries.items);
-      console.log(entries);
+
     }
     getMenuItems();
   }, []);

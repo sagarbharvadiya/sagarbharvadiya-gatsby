@@ -13,7 +13,7 @@ const AboutUs = () => {
         "sys.id":"7ERyLjnWxetzZAXhIwelBz"
       });
       setMenuItems(entries.items);
-      console.log(entries);
+      // console.log(entries);
     }
     getMenuItems();
   }, []);
