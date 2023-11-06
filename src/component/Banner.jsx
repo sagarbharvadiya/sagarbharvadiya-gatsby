@@ -13,7 +13,7 @@ const Banner = () => {
         "sys.id":"6pz8tmz7cY5jp1snFurSxl"
       });
       setMenuItems(entries.items);
-      console.log(entries);
+      // console.log(entries);
     }
     getMenuItems();
   }, []);

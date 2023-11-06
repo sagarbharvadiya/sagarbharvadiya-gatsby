@@ -13,7 +13,6 @@ html {
 body {
   background: #101010 !important;
   color: #fff !important;
-  /* font-family: 'Open Sans', sans-serif; */
   font-family: Dosis, sans-serif;
 }
 
@@ -30,9 +29,14 @@ body {
 
 .header__logo a {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 800;
   text-decoration: none;
   color: #333;
+}
+
+.header__nav p {
+  margin: 0;
+  padding: 0;
 }
 
 .header__logo h2 {
@@ -48,6 +52,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  gap: 10px;
   display: flex;
 }
 
@@ -60,6 +65,7 @@ body {
 }
 
 .header__nav a {
+  font-weight: 600;
   font-size: 20px;
   text-decoration: none;
   color: #333;
@@ -74,17 +80,15 @@ body {
 .header__toggle-icon {
   display: block;
   position: absolute;
-  top: 26px;
+  top: 23px;
   right: 6px;
-  /* transform: t
-  /* background-color: #333; */
 }
 
 .hamburger-menu {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 20px;
+  height: 22px;
   width: 30px;
   cursor: pointer;
   padding: 5px;
@@ -95,10 +99,6 @@ body {
   height: 2px;
   background-color: #333;
   width: 100%;
-}
-
-.header__nav ul li a.active {
-  border: 1px solid black;
 }
 
 /* Banner css */
@@ -119,19 +119,16 @@ body {
   font-size: 65px;
   text-transform: capitalize;
   margin: 0px 0px 0px 0px;
-  /* color: white; */
 }
 
 .banner-left-section p {
   font-size: 18px;
-  /* color: white; */
   max-width: 456px;
   line-height: 25px;
   margin: 26px 0px 35px 0px;
 }
 
 .banner-left-btn {
-
   max-width: 130px;
   text-align: center;
   padding: 4px 20px;
@@ -211,7 +208,6 @@ body {
 /* about us css */
 
 .about-us-section {
-  /* background-color: #f8f8f8; */
   padding: 70px 0;
 }
 
@@ -234,13 +230,12 @@ body {
 }
 
 .about-us-left-section h2 {
-  /* font-size: 36px; */
   margin-bottom: 35px;
   color: #eef0f2;
   font-weight: 700;
   font-size: 45px;
   text-transform: uppercase;
-  /* line-height: 0; */
+
 }
 
 .about-us-left-section p {
@@ -271,14 +266,13 @@ body {
 }
 
 .what-i-do-wrapper h2 {
-  /* font-size: 40px; */
+
   text-align: center;
   color: #eef0f2;
   font-weight: 700;
   font-size: 45px;
   margin-bottom: 35px;
   text-transform: uppercase;
-  /* line-height: 0; */
 }
 
 .what-i-do-folder {
@@ -324,14 +318,12 @@ body {
   font-weight: 700;
   font-size: 45px;
   text-transform: uppercase;
-  /* line-height: 0; */
 }
 
 
 #projects .box {
   background-color: #f9f9f9;
   border-radius: 8px;
-  /* padding: 20px; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   height: 100%;
   display: flex;
@@ -405,19 +397,8 @@ section#contact {
   font-weight: 700;
   font-size: 45px;
   text-transform: uppercase;
-  /* line-height: 0; */
-}
 
-/* .section-title h2 {
-  font-size: 32px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  padding-bottom: 0;
-  color: #3b434a;
-  position: relative;
-  z-index: 2;
-} */
+}
 
 .section-title p {
   margin-bottom: 0;
@@ -613,7 +594,7 @@ section#contact {
 
 .nav_new {
   display: flex;
-  gap: 20px;
+  gap: 35px;
   align-items: center;
 }
 
@@ -623,7 +604,9 @@ section#contact {
 }
 
 .social a {
-  font-size: 20px;
+  background: #ffb417;
+  padding: 0 5px;
+  color: #fff !important;
 }
 
 @keyframes fade-in {
