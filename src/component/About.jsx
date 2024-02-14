@@ -29,7 +29,7 @@ const AboutUs = () => {
             <div className="about-us-section" id="about">
               <div className="about-us-wrapper">
                 <div className="about-us-right-section">
-                  <img src={image} alt="About Us" />
+                  <img src={image} alt="About Us" loading="lazy" />
                 </div>
                 <div className="about-us-left-section ">
                   <h2>{title}</h2>
