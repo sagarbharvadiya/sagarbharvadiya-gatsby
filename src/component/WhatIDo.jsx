@@ -38,7 +38,7 @@ const WhatIDo = () => {
                                 return (
                                     <React.Fragment key={item.id}>
                                         <div className="what-i-do-image">
-                                            <img src={item.img} alt="HTML" />
+                                            <img src={item.img} alt="HTML"loading="lazy" />
                                             <br />
                                             {/* <div className='brand'>
                                                 <b>{item.brand}</b>

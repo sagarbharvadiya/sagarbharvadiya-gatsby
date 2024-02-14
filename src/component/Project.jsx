@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import client from "../client";
 
 const Project = () => {
@@ -10,10 +10,10 @@ const Project = () => {
         content_type: "projects",
       });
       setMenuItems(entries.items);
-
     }
     getMenuItems();
   }, []);
+
   return (
     <>
       <section id="projects">
@@ -24,26 +24,20 @@ const Project = () => {
               const { name, link } = items.fields;
               const image = items.fields.image.fields.file.url;
               const { id } = items.sys;
+
+              // Use lazy loading for individual project components
+              const LazyLoadedProject = lazy(() => import("./LazyLoadedProject"));
+
               return (
                 <React.Fragment key={id}>
                   <div className="col-lg-3">
-                    <a href={link} target="_blank" rel="no-referrer">
-                      <div className="box">
-                        <div className="image-container">
-                          <img src={image} alt={name} />
-                        </div>
-                        <div className="det">
-                          <h3>{name}</h3>
-                        </div>
-                        <div className="btn">
-                          <button>
-                            <a href={link} target="_blank" rel="noreferrer">
-                              Read More
-                            </a>
-                          </button>
-                        </div>
-                      </div>
-                    </a>
+                    <Suspense fallback={<div>Loading...</div>}>
+                      <LazyLoadedProject
+                        name={name}
+                        link={link}
+                        image={image}
+                      />
+                    </Suspense>
                   </div>
                 </React.Fragment>
               );

@@ -40,7 +40,7 @@ const Banner = () => {
                 </div>
                 <div className="banner-right-section">
                   <div className="banner-right-section">
-                    <img src={image} alt="Banner" />
+                    <img src={image} alt="Banner" loading="lazy"/>
                   </div>
                 </div>
               </div>
