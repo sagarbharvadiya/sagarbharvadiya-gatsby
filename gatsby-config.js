@@ -1,6 +1,6 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -8,7 +8,7 @@ module.exports = {
     siteUrl: `https://sagarbharvadiya.com/`,
   },
   flags: {
-    DEV_SSR: true
+    DEV_SSR: true,
   },
   plugins: [
     "gatsby-plugin-netlify-cms",
@@ -42,6 +42,14 @@ module.exports = {
         path: `${__dirname}/src/pages/`,
       },
       __key: "pages",
+    },
+    {
+      resolve: 'gatsby-source-contentful',
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
+        accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
+      },
     },
   ],
 };
