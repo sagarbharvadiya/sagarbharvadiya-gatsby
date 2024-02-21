@@ -11,7 +11,7 @@
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "upgrade-interactive": "npm-check --update",
-    "build": "gatsby build",
+    "build": "react-scripts build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
