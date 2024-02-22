@@ -38,7 +38,7 @@ const Project = () => {
 
               return (
                 <React.Fragment key={id}>
-                  <div className="col-lg-3">
+                  <div className="col-lg-3 col-md-4 col-sm-6">
                     <Suspense fallback={<div>Loading...</div>}>
                       <LazyLoadedProject
                         name={name}
