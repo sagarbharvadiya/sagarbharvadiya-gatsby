@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push } from 'firebase/database';
 import { v4 as uuidv4 } from 'uuid';
+import emailjs from "@emailjs/browser";
 
 // Initialize Firebase with the provided configuration
 const firebaseConfig = {
@@ -27,6 +28,33 @@ const BoxModel = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formSubmitted, setFormSubmitted] = useState(false);
+
+    // Email.js credentials
+    const emailJsServiceId = process.env.GATSBY_EMIALJS_SERVICEID;
+    const emailJsTemplateId = process.env.GATSBY_EMIALJS_TEMPLATEID;
+    const emailJsUserId = process.env.GATSBY_EMIALJS_USERID;
+
+    const sendNotificationEmail = async () => {
+        try {
+            const { fName, email, sub, mes } = details;
+
+            const emailParams = {
+                to_name: 'Sagar Bharvadiya', // Your name or recipient's name
+                from_name: fName,
+                email: email,
+                message: `New form submission \nName: ${fName}\nEmail: ${email}\nSubject: ${sub}\nMessage: ${mes}`,
+            };
+
+            // Replace 'your_emailjs_service_id', 'your_emailjs_template_id', and 'your_emailjs_user_id' with your actual EmailJS credentials
+            await emailjs.send(emailJsServiceId, emailJsTemplateId, emailParams, emailJsUserId);
+
+            console.log('Notification email sent successfully');
+        } catch (error) {
+            console.error('Error sending notification email:', error);
+        }
+    };
+
+
 
     // Access the database instance
     const database = getDatabase();
@@ -57,7 +85,7 @@ const BoxModel = () => {
                 sub,
                 mes,
             });
-
+            await sendNotificationEmail(); // Add this line to send notification email
             setDetails({
                 fName: '',
                 email: '',

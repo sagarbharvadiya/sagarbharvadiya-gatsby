@@ -28,9 +28,29 @@ const ContactFormNew = () => {
   const [submitted, setSubmitted] = useState(false);
 
   // Email.js credentials
-  const emailJsServiceId = 'service_0i8uqsa';
-  const emailJsTemplateId = 'template_u6rjxda';
-  const emailJsUserId = 'c_aUCFVITQtpqyIlf';
+  const emailJsServiceId =  process.env.GATSBY_EMIALJS_SERVICEID;
+  const emailJsTemplateId =  process.env.GATSBY_EMIALJS_TEMPLATEID;
+  const emailJsUserId =  process.env.GATSBY_EMIALJS_USERID;
+
+  const sendNotificationEmail = async () => {
+    try {
+      const { fName, email, sub, mes } = details;
+
+      const emailParams = {
+        to_name: 'Sagar Bharvadiya', // Your name or recipient's name
+        from_name: fName,
+        email: email,
+        message: `New form submission \nName: ${fName}\nEmail: ${email}\nSubject: ${sub}\nMessage: ${mes}`,
+      };
+
+      // Replace 'your_emailjs_service_id', 'your_emailjs_template_id', and 'your_emailjs_user_id' with your actual EmailJS credentials
+      await emailjs.send(emailJsServiceId, emailJsTemplateId, emailParams, emailJsUserId);
+
+      console.log('Notification email sent successfully');
+    } catch (error) {
+      console.error('Error sending notification email:', error);
+    }
+  };
 
 
   const validateForm = () => {
@@ -61,14 +81,8 @@ const ContactFormNew = () => {
         sub,
         mes,
       });
-      // Send email using Email.js
-      const emailParams = {
-        to_name: `${fName}`,
-        from_name: 'Sagar Bharvadiya',
-        message: `Message from ${fName} (${email}): ${mes}`,
-      };
 
-      await emailjs.send(emailJsServiceId, emailJsTemplateId, emailParams, emailJsUserId);
+      await sendNotificationEmail(); // Add this line to send notification email
 
       // Reset the form fields
       setDetails({
