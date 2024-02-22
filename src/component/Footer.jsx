@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Footer = () => {
   const [text, setText] = useState("");
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
@@ -6,6 +9,8 @@ const Footer = () => {
   const repeatCount = 5; // Set the desired number of repetitions
 
   useEffect(() => {
+    AOS.init(); // Initialize AOS
+
     if (currentCharIndex < fullText.length) {
       const timeout = setTimeout(() => {
         setText((prevText) => prevText + fullText[currentCharIndex]);
@@ -28,15 +33,18 @@ const Footer = () => {
   }, [currentCharIndex, repeatCount]);
 
   return (
-    <footer id="footer">
+    <footer id="footer" data-aos="fade-up">
       <div className="container">
         {currentCharIndex < fullText.length ? (
           <h3>Sagar{text}</h3>
         ) : (
           <h3>Sagar Bharvadiya</h3>
         )}
-        {/* <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> */}
-        <div className="social-links">
+        <div
+          className="social-links"
+          data-aos="fade-up"
+          data-aos-duration="1200"
+        >
           <a
             href="https://bit.ly/sagar-github"
             rel="noreferrer"

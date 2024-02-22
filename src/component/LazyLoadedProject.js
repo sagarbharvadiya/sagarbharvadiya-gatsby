@@ -4,7 +4,7 @@ const LazyLoadedProject = ({ name, link, image }) => {
   return (
     <>
       <a href={link} target="_blank" rel="no-referrer">
-        <div className="box">
+        <div className="box" data-aos="fade-up" data-aos-duration="1200">
           <div className="image-container">
             <img src={image} alt={name} loading="lazy" />
           </div>
@@ -13,10 +13,10 @@ const LazyLoadedProject = ({ name, link, image }) => {
           </div>
           <div className="btn">
             <button>
-            <a href={link} target="_blank" rel="noreferrer">
-              Read More
-            </a>
-          </button>
+              <a href={link} target="_blank" rel="noreferrer">
+                Visit Project
+              </a>
+            </button>
           </div>
         </div>
       </a>

@@ -40,9 +40,6 @@ const WhatIDo = () => {
                                         <div className="what-i-do-image">
                                             <img src={item.img} alt="HTML"loading="lazy" />
                                             <br />
-                                            {/* <div className='brand'>
-                                                <b>{item.brand}</b>
-                                            </div> */}
                                         </div>
                                     </React.Fragment>
                                 )

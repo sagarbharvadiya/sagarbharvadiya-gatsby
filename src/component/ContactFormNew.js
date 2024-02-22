@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push } from 'firebase/database';
+import emailjs from "@emailjs/browser";
 
 const firebaseConfig = {
   apiKey: process.env.GATSBY_YOUR_API_KEY,
@@ -25,6 +26,12 @@ const ContactFormNew = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  // Email.js credentials
+  const emailJsServiceId = 'service_0i8uqsa';
+  const emailJsTemplateId = 'template_u6rjxda';
+  const emailJsUserId = 'c_aUCFVITQtpqyIlf';
+
 
   const validateForm = () => {
     const { fName, email, sub, mes } = details;
@@ -54,6 +61,14 @@ const ContactFormNew = () => {
         sub,
         mes,
       });
+      // Send email using Email.js
+      const emailParams = {
+        to_name: `${fName}`,
+        from_name: 'Sagar Bharvadiya',
+        message: `Message from ${fName} (${email}): ${mes}`,
+      };
+
+      await emailjs.send(emailJsServiceId, emailJsTemplateId, emailParams, emailJsUserId);
 
       // Reset the form fields
       setDetails({
