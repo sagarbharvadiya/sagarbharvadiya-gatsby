@@ -20,7 +20,7 @@ module.exports = {
       options: {
         name: 'sagarbharvadiya',
         display: 'standalone',
-        icon: 'src/image/favicon.png',
+        icon: 'src/image/favicon-32x32.png',
       },
     },
     "gatsby-plugin-mdx",
