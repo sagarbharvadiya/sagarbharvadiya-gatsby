@@ -14,6 +14,8 @@ module.exports = {
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`, // Needed for dynamic images
     "gatsby-plugin-sitemap",
     {
       resolve: 'gatsby-plugin-manifest',
@@ -25,6 +27,7 @@ module.exports = {
     },
     "gatsby-plugin-mdx",
     "gatsby-transformer-remark",
+    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
