@@ -47,7 +47,7 @@ const Banner = () => {
                   <h2>{title}</h2>
                   {richTextContent}
                   <div className="banner-left-btn">
-                    <a href={link}>{button}</a>
+                    <a href={link} className="btn btn-success">{button}</a>
                   </div>
                 </div>
                 <div
