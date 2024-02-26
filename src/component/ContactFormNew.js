@@ -159,7 +159,7 @@ const ContactFormNew = () => {
         </div>
         <div className="my-3"></div>
         <div className="text-center">
-          <button type="submit" onClick={postData} disabled={isSubmitting || submitted}>
+          <button type="submit" onClick={postData} disabled={isSubmitting || submitted} className='btn btn-success'>
             {isSubmitting ? 'Submitting...' : submitted ? 'Submitted' : 'Submit'}
           </button>
         </div>

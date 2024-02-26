@@ -7,7 +7,7 @@ const Footer = () => {
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
   const fullText = "Bharvadiya";
   const repeatCount = 5; // Set the desired number of repetitions
-
+  const currentYear = new Date().getFullYear();
   useEffect(() => {
     AOS.init(); // Initialize AOS
 
@@ -46,6 +46,14 @@ const Footer = () => {
           data-aos-duration="1200"
         >
           <a
+            href="https://api.whatsapp.com/send?phone=6352644141"
+            rel="noreferrer"
+            target="_blank"
+            class="whatsapp"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a
             href="https://bit.ly/sagar-github"
             rel="noreferrer"
             target="_blank"
@@ -83,7 +91,7 @@ const Footer = () => {
           <strong>
             <span> sagar</span>
           </strong>
-          . All Rights Reserved 2023
+          . All Rights Reserved {currentYear}
         </div>
         <div className="credits">
           Designed by <span>Sagar Bharvadiya</span>

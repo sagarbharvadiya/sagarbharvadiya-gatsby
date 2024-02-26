@@ -1,5 +1,5 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap");
 
 * {
   margin : 0px;
@@ -39,13 +39,10 @@ body {
 }
 
 .header__logo h2 {
-  text-shadow: -1px -1px 0 #f1b722,
-    1px -1px 0 #f1b722,
-    -1px 1px 0 #f1b722,
+  text-shadow: -1px -1px 0 #f1b722, 1px -1px 0 #f1b722, -1px 1px 0 #f1b722,
     1px 1px 0 #f1b722;
   background: transparent;
 }
-
 
 .header__nav ul {
   list-style: none;
@@ -106,7 +103,7 @@ body {
   display        : flex;
   justify-content: space-between;
   max-width      : 1245px;
-  margin         : 70px auto 82px auto;
+  margin         : 10px auto 82px auto;
   align-items    : center;
 }
 
@@ -128,19 +125,14 @@ body {
 }
 
 .banner-left-btn {
-  max-width    : 130px;
-  text-align   : center;
-  padding      : 4px 20px;
   color        : white;
   border-radius: 30px;
-  font-size    : 22px;
-  background   : #f1b722;
-
 }
 
 .banner-left-btn a {
   color          : white;
   text-decoration: none;
+  font-size      : 22px;
   text-transform : capitalize;
 }
 
@@ -200,9 +192,9 @@ body {
   }
 }
 
-.banner-right-section img {
+/* .banner-right-section img {
   width: 702px;
-}
+} */
 
 /* about us css */
 
@@ -234,7 +226,6 @@ body {
   font-weight   : 700;
   font-size     : 45px;
   text-transform: uppercase;
-
 }
 
 .about-us-left-section p {
@@ -265,7 +256,6 @@ body {
 }
 
 .what-i-do-wrapper h2 {
-
   text-align    : center;
   color         : #eef0f2;
   font-weight   : 700;
@@ -318,7 +308,6 @@ body {
   font-size     : 45px;
   text-transform: uppercase;
 }
-
 
 #projects .box {
   background-color: #f9f9f9;
@@ -379,7 +368,6 @@ body {
   background-color: #0056b3;
 }
 
-
 /* Contact us css  */
 section#contact {
   padding: 70px 0px;
@@ -396,7 +384,6 @@ section#contact {
   font-weight   : 700;
   font-size     : 45px;
   text-transform: uppercase;
-
 }
 
 .section-title p {
@@ -499,16 +486,13 @@ section#contact {
   -moz-appearance   : none;
   appearance        : none;
   border-radius     : 0.375rem;
-  transition        : border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  transition        : border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.php-email-form button[type=submit] {
-  background   : #ffb727;
-  border       : 0;
-  padding      : 10px 24px;
-  color        : #fff;
-  transition   : 0.4s;
-  border-radius: 5px;
+.php-email-form button[type="submit"] {
+  color     : #fff;
+  transition: 0.4s;
+  font-size : 20px;
 }
 
 /* footer css */
@@ -557,33 +541,79 @@ section#contact {
   margin: 0 0 40px 0;
 }
 
-#footer .social-links a {
-  font-size    : 18px;
-  /* display   : inline-block; */
-  background   : #ffb727;
-  color        : #fff;
-  line-height  : 1;
-  padding      : 13px 14px;
-  margin-right : 4px;
-  border-radius: 50%;
-  text-align   : center;
-  width        : 36px;
-  height       : 36px;
-  transition   : 0.3s;
+.social-links {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  margin-top     : 20px;
 }
 
-#footer .social-links a:hover {
-  background     : #f3a200;
-  color          : #fff;
-  text-decoration: none;
+.social-links a {
+  margin          : 0 10px;
+  position        : relative;
+  color           : #fff;
+  background-color: #fff;
+  text-decoration : none;
+  font-size       : 24px;
+  padding         : 5px;
+  border-radius   : 10px;
+  transition      : color 0.3s, box-shadow 0.3s;
+}
+
+.social-links a::before {
+  content   : "";
+  position  : absolute;
+  top       : 50%;
+  left      : 50%;
+  transform : translate(-50%, -50%);
+  width     : 100%;
+  height    : 100%;
+  opacity   : 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.social-links a:hover::before {
+  opacity: 1;
+}
+
+.social-links a:hover {
+  color     : #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.social-links i {
+  font-size    : 1.5em;
+  border-radius: 50px;
+}
+
+.github i {
+  color: #333;
+}
+
+.instagram i {
+  color: #e4405f;
+}
+
+.google-plus i {
+  color: #00aff0;
+}
+
+.linkedin i {
+  color: #0077b5;
+}
+
+.whatsapp i {
+  color: #075e54;
 }
 
 #footer .copyright {
   margin: 0 0 5px 0;
+  letter-spacing: 1.1px;
 }
 
 #footer .credits {
   font-size: 13px;
+  letter-spacing: 1.1px;
 }
 
 .fade-in {
@@ -782,7 +812,6 @@ section#contact {
     justify-content: center;
     position       : relative;
   }
-
 
   .banner-right-section img {
     width    : 100%;
