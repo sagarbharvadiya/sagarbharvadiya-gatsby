@@ -66,6 +66,22 @@ function Header() {
           <a href="mailto:sagarbharvadiya@gmail.com">
             <i className="fa-solid fa-envelope"></i>
           </a>
+          <a
+            href="https://bit.ly/sagar-linkedin"
+            rel="noreferrer"
+            target="_blank"
+            className="linkedin"
+          >
+            <i className="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?phone=6352644141"
+            rel="noreferrer"
+            target="_blank"
+            class="whatsapp"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
         </div>
       </div>
 

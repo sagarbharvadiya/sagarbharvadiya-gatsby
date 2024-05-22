@@ -184,7 +184,7 @@ const BoxModel = () => {
                             </div>
                             <div className="my-3"></div>
                             <div className="text-center">
-                                <button type="submit" onClick={postData} disabled={isSubmitting || formSubmitted}>
+                                <button className='btn btn-success' type="submit" onClick={postData} disabled={isSubmitting || formSubmitted}>
                                     {isSubmitting ? 'Submitting...' : formSubmitted ? 'Submitted' : 'Submit'}
                                 </button>
                             </div>
