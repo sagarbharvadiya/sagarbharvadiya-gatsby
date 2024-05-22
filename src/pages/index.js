@@ -8,7 +8,7 @@ const IndexPage = () => {
   return (
     <>
       <main>
-        {/* <BoxModel/> */}
+        <BoxModel/>
         <title>sagarbharvadiya</title>
         <Meta />
         <Home />
