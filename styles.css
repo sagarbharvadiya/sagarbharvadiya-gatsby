@@ -864,5 +864,5 @@ section#contact {
 #projects .btn
   {
     border: none !important;
-    background: !important;
+    background: none !important;
   }
