@@ -862,6 +862,6 @@ section#contact {
   }
 }
   .btn:active{
-    border:none;
-    background: none;
+    border: none !important;
+    background: !important;
   }
