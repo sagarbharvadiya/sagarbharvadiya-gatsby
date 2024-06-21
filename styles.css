@@ -861,7 +861,8 @@ section#contact {
     margin: auto;
   }
 }
-  .btn:active{
+#projects .btn
+  {
     border: none !important;
     background: !important;
   }
