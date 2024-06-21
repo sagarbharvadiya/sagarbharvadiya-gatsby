@@ -861,3 +861,7 @@ section#contact {
     margin: auto;
   }
 }
+  .btn:active{
+    border:none;
+    background: none;
+  }
