@@ -9,8 +9,6 @@ const Contact = () => {
                 <div className="container">
                     <div className="section-title">
                         <span>Contact Me</span>
-                        {/* <h2>Contact Me</h2> */}
-                        {/* <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p> */}
                     </div>
                     <div className="row">
                         <div className="col-lg-6">

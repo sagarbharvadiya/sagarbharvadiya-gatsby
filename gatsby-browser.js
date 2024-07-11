@@ -1,4 +1,5 @@
 import './styles.css';
+import "./src/styles/global.css";
 
 export const onClientEntry = () => {
   // Include Font Awesome CSS
@@ -18,15 +19,4 @@ export const onClientEntry = () => {
   bootstrapLink.crossOrigin = 'anonymous';
   document.head.appendChild(bootstrapLink);
 
-   // Include AOS CSS
-   const aosLink = document.createElement('link');
-   aosLink.rel = 'stylesheet';
-   aosLink.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
-   document.head.appendChild(aosLink);
- 
-   // Include AOS JavaScript
-   const aosScript = document.createElement('script');
-   aosScript.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
-   document.body.appendChild(aosScript);
-  
 };

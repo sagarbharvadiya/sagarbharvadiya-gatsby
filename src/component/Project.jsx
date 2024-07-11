@@ -1,6 +1,4 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import client from "../client";
 
 const Project = () => {
@@ -16,12 +14,6 @@ const Project = () => {
     getMenuItems();
   }, []);
 
-  useEffect(() => {
-    // Initialize AOS after menu items are loaded
-    if (menuItems.length > 0) {
-      AOS.init();
-    }
-  }, [menuItems]);
 
   return (
     <>

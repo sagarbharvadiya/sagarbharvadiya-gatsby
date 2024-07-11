@@ -1,0 +1,5 @@
+{
+    "entry":["src/index.js"],
+    "projects":["src/**/*.{js,jsx,ts,tsx}"],
+    "ignore":["src/json","src/image","public"]
+}

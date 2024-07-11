@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import client from "../client";
-import AOS from "aos";
-import "aos/dist/aos.css"; // Import the AOS styles
 
 const Banner = () => {
   const [menuItems, setMenuItems] = useState([]);
@@ -10,55 +8,72 @@ const Banner = () => {
   useEffect(() => {
     async function getMenuItems() {
       const entries = await client.getEntries({
-        content_type: "bannerSection",
-        "sys.id": "6pz8tmz7cY5jp1snFurSxl",
+        content_type: "titleDescriptionButtons",
+        "sys.id": "1R9rioEIrdJow6kE81wRiV",
       });
       setMenuItems(entries.items);
     }
     getMenuItems();
   }, []);
 
-  useEffect(() => {
-    // Initialize AOS after menu items are loaded
-    if (menuItems.length > 0) {
-      AOS.init();
-    }
-  }, [menuItems]);
-
   return (
     <>
-      {menuItems.map((items, i) => {
-        const { title, description, button, link } = items.fields;
+      {menuItems.map((items) => {
+        const { title, description, button1, button2 } = items.fields;
         const { id } = items.sys;
-        const image = items.fields.image.fields.file.url;
+        const image = items.fields.bg.fields.file.url;
         const richTextContent = documentToReactComponents(description);
         return (
           <React.Fragment key={id}>
-            <div
-              className="banner-section"
-              data-aos="fade-up" // Add AOS animation to the entire banner section
-            >
-              <div className="banner-wrapper">
-                <div
-                  className="banner-left-section"
-                  data-aos="fade-right" // Add AOS animation to the left section
-                  data-aos-duration="1000"
-                >
-                  <h2>{title}</h2>
-                  {richTextContent}
-                  <div className="banner-left-btn">
-                    <a href={link} className="btn btn-success">{button}</a>
-                  </div>
-                </div>
-                <div
-                  className="banner-right-section"
-                  data-aos="fade-left" // Add AOS animation to the right section
-                  data-aos-duration="1000"
-                >
-                  <img src={image} alt="Banner" loading="lazy" />
+            <section className="tw-w-full tw-h-[100dvh] tw-relative tw-z-10" id="home">
+              <div className="container tw-h-full tw-flex tw-flex-col tw-items-center tw-justify-center tw-space-y-6 tw-relative tw-z-10">
+                <h1 className="tw-text-6xl tw-font-bold">{title}</h1>
+                <p className="tw-text-2xl">{richTextContent}</p>
+                <div className="tw-flex tw-gap-4">
+                  <button
+                    className="btn-main tw-w-full tw-flex tw-justify-center tw-items-center tw-overflow-hidden lg:tw-w-52 lg:tw-h-12 tw-rounded-[5rem] tw-bg-[length:300%_300%] tw-transition-[0.5s] tw-backdrop-blur-[1rem] tw-bg-origin-border"
+                    type="button"
+                  >
+                    <strong className="tw-z-10 tw-text-[1rem] #fff tw-tracking-wider">
+                      {button1}
+                    </strong>
+                    <div id="container-stars">
+                      <div id="stars"></div>
+                    </div>
+
+                    <div id="glow">
+                      <div className="circle"></div>
+                      <div className="circle"></div>
+                    </div>
+                  </button>
+                  <button
+                    className="btn-main tw-w-full tw-flex tw-justify-center tw-items-center tw-overflow-hidden lg:tw-w-52 lg:tw-h-12 tw-rounded-[5rem] tw-bg-[length:300%_300%] tw-transition-[0.5s] tw-backdrop-blur-[1rem] tw-bg-origin-border"
+                    type="button"
+                  >
+                    <strong className="tw-z-10 tw-text-[1rem] #fff tw-tracking-wider">
+                      {button2}
+                    </strong>
+                    <div id="container-stars">
+                      <div id="stars"></div>
+                    </div>
+
+                    <div id="glow">
+                      <div className="circle"></div>
+                      <div className="circle"></div>
+                    </div>
+                  </button>
                 </div>
               </div>
-            </div>
+              <div className="tw-absolute tw-inset-0 -tw-z-10">
+                <div
+                  className="tw-w-full tw-h-screen tw-d-flex tw-justify-center tw-items-center tw-bg-fixed tw-bg-center tw-bg-cover tw-bg-no-repeat"
+                  style={{
+                    backgroundImage: `url(${image})`,
+                  }}
+                ></div>
+                <div className="tw-absolute tw-inset-0 tw-bg-black tw-opacity-50"></div>
+              </div>
+            </section>
           </React.Fragment>
         );
       })}

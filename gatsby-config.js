@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `/sagarbharvadiya`,
-    siteUrl: `https://sagarbharvadiya.com/`,
+    siteUrl: `https://sagarbharvadiya.site/`,
   },
   flags: {
     DEV_SSR: true,
@@ -14,6 +14,7 @@ module.exports = {
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
+    `gatsby-plugin-anchor-links`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`, // Needed for dynamic images
     "gatsby-plugin-sitemap",
@@ -22,7 +23,7 @@ module.exports = {
       options: {
         name: 'sagarbharvadiya',
         display: 'standalone',
-        icon: 'src/image/favicon-32x32.png',
+        icon: './src/image/sagar-dp.png',
       },
     },
     "gatsby-plugin-mdx",
@@ -48,10 +49,11 @@ module.exports = {
     },
     {
       resolve: 'gatsby-source-contentful',
-      resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
         accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
+        // spaceId:'h83gxcmjvwkm' ,
+        // accessToken: '0caI6gwIa99ZVW6-lp8_hLD96fG9p-Qex34L6UTCkMA',
       },
     },
   ],
