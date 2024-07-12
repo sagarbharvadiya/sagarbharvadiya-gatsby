@@ -36,7 +36,7 @@ const AboutUs = () => {
                 </div>
                 <div className="tw-m-auto">
                   <img
-                    src="../image/sagar-dp.png"
+                    src={image}
                     alt={image}
                     className="tw-w-fit tw-m-auto tw-rounded-3xl hover:tw-cursor-not-allowed dp-img"
                     loading="lazy"
