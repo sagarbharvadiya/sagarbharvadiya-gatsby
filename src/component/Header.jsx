@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from "react";
+import { Link as ScrollLink } from "react-scroll";
 import client from "../client";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { INLINES } from "@contentful/rich-text-types";
+import MobileHeader from "./MobileHeader";
+
 
 function Header() {
   const [menuItems, setMenuItems] = useState([]);
-  const [isNavOpen, setIsNavOpen] = useState(false);
-
+  const [error, setError] = useState(null);
   useEffect(() => {
     async function getMenuItems() {
       try {
         const entries = await client.getEntries({
           content_type: "navbarComponent",
+          order: "fields.order",
         });
-        setMenuItems(entries.items);
+        setMenuItems(entries.items.map((item) => item.fields));
       } catch (error) {
         console.error("Error fetching menu items:", error);
       }
@@ -21,80 +24,91 @@ function Header() {
     getMenuItems();
   }, []);
 
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
-  };
-
-  const renderRichText = (links) => {
-    const renderNode = {
-      [INLINES.ASSET_HYPERLINK]: (node) => (
-        <a
-          href={`https:${node.data.target.fields.file.url}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {node.content[0].value}
-        </a>
-      ),
+  const renderRichText = (richText) => {
+    const options = {
+      renderNode: {
+        [INLINES.HYPERLINK]: (node, children) => (
+          <a
+            href={node.data.uri}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tw-no-underline tw-text-white tw-cursor-pointer"
+          >
+            {children}
+          </a>
+        ),
+      },
     };
-
-    return documentToReactComponents(links, { renderNode });
+    try {
+      return documentToReactComponents(richText, options);
+    } catch (error) {
+      console.error("Error rendering rich text:", error);
+      setError(error);
+      return null;
+    }
   };
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  console.log(menuItems)
 
   return (
-    <header className="header">
-      <div className="header__logo">
-        <a href="/">
-          <h3>
-            Sagar <span>Bharvadiya</span>
-          </h3>
-        </a>
-      </div>
-
-      <div className="nav_new">
-        <nav className={`header__nav ${isNavOpen ? "open" : ""}`}>
-          <ul>
-            {menuItems.map((item) => (
-              <li key={item.sys.id}>{renderRichText(item.fields.links)}</li>
-            ))}
-          </ul>
-        </nav>
-        <div className="social">
-          <a href="tel:6352644141">
-            <i className="fa-solid fa-phone"></i>
-          </a>
-          <a href="mailto:sagarbharvadiya@gmail.com">
-            <i className="fa-solid fa-envelope"></i>
-          </a>
+    <>
+      <header className="tw-sticky tw-top-0 tw-z-20 tw-bg-[#0f172a]/80 tw-backdrop-blur-sm tw-hidden md:tw-block">
+        <div className="container tw-mx-auto tw-py-4 tw-flex tw-items-center tw-justify-between">
           <a
-            href="https://bit.ly/sagar-linkedin"
-            rel="noreferrer"
-            target="_blank"
-            className="linkedin"
+            href=""
+            className="tw-text-2xl tw-font-bold tw-text-white tw-no-underline"
           >
-            <i className="fa-brands fa-linkedin"></i>
+            <h3>
+              Sagar <span>Bharvadiya</span>
+            </h3>
           </a>
-          <a
-            href="https://api.whatsapp.com/send?phone=6352644141"
-            rel="noreferrer"
-            target="_blank"
-            class="whatsapp"
-          >
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
+          <nav className="tw-hidden md:tw-flex tw-items-center tw-space-x-6 header__nav">
+            {menuItems
+              .sort((a, b) => a.order - b.order)
+              .map((item, index) => (
+                <li
+                  key={index}
+                  className="tw-list-none tw-text-lg tw-font-bold"
+                >
+                  {item.type === "resume" ? (
+                    // Debug: Log item.links to ensure it has the expected data
+                    <div>
+                      {console.log(item.links)}
+                      {item.links && (
+                        <a
+                          href={item.links.uri}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="tw-no-underline tw-text-white tw-cursor-pointer"
+                        >
+                          {item.menu}
+                        </a>
+                      )}
+                    </div>
+                  ) : (
+                    <ScrollLink
+                      to={item.link}
+                      smooth={true}
+                      duration={500}
+                      className="tw-no-underline tw-text-white tw-cursor-pointer"
+                    >
+                      {item.menu}
+                    </ScrollLink>
+                  )}
+                </li>
+              ))}
+          </nav>
+          <button className="get-in-touch tw-w-[120px] tw-h-[40px] tw-rounded-2xl tw-cursor-pointer tw-relative tw-text-lg tw-text-white tw-bg-black tw-border-none tw-transition-[0.1s] tw-font-bold tw-hidden lg:tw-block">
+            Get in Touch
+          </button>
         </div>
-      </div>
-
-      <button className="header__toggle" onClick={toggleNav}>
-        <span className="header__toggle-icon">
-          <div className="hamburger-menu">
-            <div className="hamburger-menu-line"></div>
-            <div className="hamburger-menu-line"></div>
-            <div className="hamburger-menu-line"></div>
-          </div>
-        </span>
-      </button>
-    </header>
+      </header>
+      <MobileHeader />
+    </>
   );
 }
 

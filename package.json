@@ -13,19 +13,23 @@
     "upgrade-interactive": "npm-check --update",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "knip": "knip"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.18.0",
     "@emailjs/browser": "^3.12.1",
     "@mdx-js/react": "^2.3.0",
-    "aos": "^2.3.4",
+    "@react-three/fiber": "^8.16.8",
     "bootstrap": "^5.2.3",
+    "clsx": "^2.1.1",
     "contentful": "^10.6.1",
     "dotenv": "^16.0.3",
     "firebase": "^9.23.0",
     "font-awesome": "^4.7.0",
+    "framer-motion": "^11.2.12",
     "gatsby": "^5.13.3",
+    "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.10.0",
     "gatsby-plugin-mdx": "^5.10.0",
@@ -42,11 +46,19 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "react-icon-cloud": "^4.1.4",
     "react-modal": "^3.16.1",
+    "react-scroll": "^1.9.0",
     "react-slick": "^0.29.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "tailwind-merge": "^2.3.0",
+    "three": "^0.166.1"
   },
   "devDependencies": {
-    "npm-check": "^3.2.10"
+    "@types/node": "^20.14.10",
+    "knip": "^5.25.2",
+    "npm-check": "^3.2.10",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.5.3"
   }
 }

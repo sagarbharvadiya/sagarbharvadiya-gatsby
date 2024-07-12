@@ -7,9 +7,9 @@ import BoxModel from '../component/BoxModel';
 const IndexPage = () => {
   return (
     <>
-      <main>
+      <main className='bg-background !opacity-100 transition-opacity duration-300'>
         <BoxModel/>
-        <title>sagarbharvadiya</title>
+        <title>Web Developer | Sagar Bharvadiya</title>
         <Meta />
         <Home />
       </main>
