@@ -5,10 +5,10 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { INLINES } from "@contentful/rich-text-types";
 import MobileHeader from "./MobileHeader";
 
-
 function Header() {
   const [menuItems, setMenuItems] = useState([]);
   const [error, setError] = useState(null);
+
   useEffect(() => {
     async function getMenuItems() {
       try {
@@ -18,41 +18,16 @@ function Header() {
         });
         setMenuItems(entries.items.map((item) => item.fields));
       } catch (error) {
+        setError(error);
         console.error("Error fetching menu items:", error);
       }
     }
     getMenuItems();
   }, []);
 
-  const renderRichText = (richText) => {
-    const options = {
-      renderNode: {
-        [INLINES.HYPERLINK]: (node, children) => (
-          <a
-            href={node.data.uri}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="tw-no-underline tw-text-white tw-cursor-pointer"
-          >
-            {children}
-          </a>
-        ),
-      },
-    };
-    try {
-      return documentToReactComponents(richText, options);
-    } catch (error) {
-      console.error("Error rendering rich text:", error);
-      setError(error);
-      return null;
-    }
-  };
-
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-
-  console.log(menuItems)
 
   return (
     <>
@@ -75,19 +50,21 @@ function Header() {
                   className="tw-list-none tw-text-lg tw-font-bold"
                 >
                   {item.type === "resume" ? (
-                    // Debug: Log item.links to ensure it has the expected data
                     <div>
-                      {console.log(item.links)}
-                      {item.links && (
-                        <a
-                          href={item.links.uri}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="tw-no-underline tw-text-white tw-cursor-pointer"
-                        >
-                          {item.menu}
-                        </a>
-                      )}
+                      {item.links &&
+                        documentToReactComponents(item.links, {
+                          renderNode: {
+                            [INLINES.ASSET_HYPERLINK]: (node) => (
+                              <a
+                                href={`https://${node.data.target.fields.file.url}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {item.menu}
+                              </a>
+                            ),
+                          },
+                        })}
                     </div>
                   ) : (
                     <ScrollLink
@@ -102,7 +79,13 @@ function Header() {
                 </li>
               ))}
           </nav>
-          <button className="get-in-touch tw-w-[120px] tw-h-[40px] tw-rounded-2xl tw-cursor-pointer tw-relative tw-text-lg tw-text-white tw-bg-black tw-border-none tw-transition-[0.1s] tw-font-bold tw-hidden lg:tw-block">
+          <button
+            className="get-in-touch tw-w-[120px] tw-h-[40px] tw-rounded-2xl tw-cursor-pointer tw-relative tw-text-lg tw-text-white tw-bg-black tw-border-none tw-transition-[0.1s] tw-font-bold tw-hidden lg:tw-block"
+            onClick={() =>
+              (window.location.href =
+                "https://api.whatsapp.com/send?phone=6352644141")
+            }
+          >
             Get in Touch
           </button>
         </div>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push } from 'firebase/database';
-import { v4 as uuidv4 } from 'uuid';
 import emailjs from "@emailjs/browser";
 
 // Initialize Firebase with the provided configuration

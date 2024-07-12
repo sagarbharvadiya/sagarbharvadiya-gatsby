@@ -15,7 +15,7 @@ const Services = () => {
     }
     getMenuItems();
   }, []);
-  console.log(menuItems)
+
   return (
     <section className="tw-w-full tw-py-24 tw-bg-muted" id="services">
       <div className="container">
