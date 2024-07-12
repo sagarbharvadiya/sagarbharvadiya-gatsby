@@ -30,11 +30,11 @@ const Banner = () => {
               id="home"
             >
               <div className="container tw-h-full tw-flex tw-flex-col tw-items-center tw-justify-center tw-space-y-6 tw-relative tw-z-10">
-                <h1 className="tw-text-6xl tw-font-bold">{title}</h1>
+                <h1 className="tw-text-4xl lg:tw-text-6xl tw-font-bold">{title}</h1>
                 <p className="tw-text-2xl">{richTextContent}</p>
                 <div className="tw-flex tw-gap-4">
                   <button
-                    className="btn-main tw-w-full tw-flex tw-justify-center tw-items-center tw-overflow-hidden lg:tw-w-52 lg:tw-h-12 tw-rounded-[5rem] tw-bg-[length:300%_300%] tw-transition-[0.5s] tw-backdrop-blur-[1rem] tw-bg-origin-border"
+                    className="btn-main tw-w-full tw-px-3 tw-flex tw-justify-center tw-items-center tw-overflow-hidden lg:tw-w-52 lg:tw-h-12 tw-rounded-[5rem] tw-bg-[length:300%_300%] tw-transition-[0.5s] tw-backdrop-blur-[1rem] tw-bg-origin-border"
                     type="button"
                     onClick={() => {
                       const projectsElement =
@@ -54,7 +54,7 @@ const Banner = () => {
                     </div>
                   </button>
                   <button
-                    className="btn-main tw-w-full tw-flex tw-justify-center tw-items-center tw-overflow-hidden lg:tw-w-52 lg:tw-h-12 tw-rounded-[5rem] tw-bg-[length:300%_300%] tw-transition-[0.5s] tw-backdrop-blur-[1rem] tw-bg-origin-border"
+                    className="btn-main tw-w-full tw-px-3 tw-flex tw-justify-center tw-items-center tw-overflow-hidden lg:tw-w-52 lg:tw-h-12 tw-rounded-[5rem] tw-bg-[length:300%_300%] tw-transition-[0.5s] tw-backdrop-blur-[1rem] tw-bg-origin-border"
                     type="button"
                     onClick={() => (window.location.href = "tel:6362644141")}
                   >
@@ -79,7 +79,7 @@ const Banner = () => {
                     backgroundImage: `url(${image})`,
                   }}
                 ></div>
-                <div className="tw-absolute tw-inset-0 tw-bg-black tw-opacity-50"></div>
+                <div className="tw-absolute tw-h-screen tw-inset-0 tw-bg-black tw-opacity-50"></div>
               </div>
             </section>
           </React.Fragment>
