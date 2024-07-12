@@ -19,8 +19,9 @@ const Project = () => {
     <>
       <section id="projects">
         <div className="container">
-          <h2>Projects</h2>
-          <div className="tw-grid tw-gap-6 tw-grid-cols-1 md:tw-grid-cols-2 lg:tw-grid-cols-4">
+        <h2 className="tw-text-4xl tw-font-bold">PROJECTS</h2>
+          <div className="tw-w-full lg:tw-max-w-6xl tw-mx-auto tw-py-12 md:tw-px-6">
+          <div className="tw-grid tw-grid-cols-1 md:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-8">
             {menuItems.map((items) => {
               const { name, link } = items.fields;
               const image = items.fields.image.fields.file.url;
@@ -42,6 +43,7 @@ const Project = () => {
                 </React.Fragment>
               );
             })}
+            </div>
           </div>
         </div>
       </section>

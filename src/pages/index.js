@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Meta from "../component/Meta";
 import Home from './Home';
-import '../../styles.css';
 import Loading from '../component/Loading';
 
 const IndexPage = () => {
