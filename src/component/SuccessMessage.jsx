@@ -1,15 +1,14 @@
 import React from "react";
 const SuccessMessage = () => {
   return (
-    <div className="w-full max-w-[570px] rounded-[20px] bg-gray-900 py-12 px-8 text-center md:py-[60px] md:px-[70px]">
-      <h3 className="text-white pb-2 text-xl font-bold sm:text-2xl">
+    <div className="tw-w-full tw-rounded-lg tw-bg-slate-700 tw-mt-4 md:tw-mt-0 tw-py-12 tw-px-8 tw-text-center md:tw-py-[60px] md:tw-px-[70px]">
+      <h3 className="tw-text-white tw-pb-2 tw-text-xl tw-font-bold sm:tw-text-2xl">
         Your Message Sent Successfully
       </h3>
-      <span className="bg-indigo-500 mx-auto mb-6 inline-block h-1 w-[90px] rounded"></span>
-      <p className="text-gray-400 mb-10 text-base leading-relaxed">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s
+      <span className="tw-bg-indigo-500 tw-mx-auto tw-mb-6 tw-inline-block tw-h-1 tw-w-[90px] tw-rounded"></span>
+      <p className="tw-text-yellow-50 tw-mb-10 tw-text-base tw-leading-relaxed">
+        Thanks for reaching out! We've received your message and will get back
+        to you as soon as possible.
       </p>
     </div>
   );

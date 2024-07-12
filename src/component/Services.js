@@ -17,7 +17,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="tw-w-full tw-py-2 lg:tw-py-24 tw-bg-muted" id="services">
+    <section className="tw-w-full tw-py-2 lg:tw-py-5 tw-bg-muted" id="services">
       <div className="container">
         <div className="tw-space-y-4 tw-mb-12">
           <h2 className="tw-text-4xl tw-font-bold">MY SERVICES</h2>

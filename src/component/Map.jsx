@@ -14,6 +14,7 @@ const Map = () => {
         allowFullScreen=""
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
+        className="tw-rounded-lg"
       ></iframe>
     </>
   );
