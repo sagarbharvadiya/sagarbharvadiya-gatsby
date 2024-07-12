@@ -49,7 +49,7 @@ const ContactForm = () => {
         className="php-email-form"
         ref={formRef}
         onSubmit={handleSubmit}
-        // data-netlify="true"
+      // data-netlify="true"
       >
         <div className="row">
           <div className="col-md-6 form-group">
@@ -102,8 +102,8 @@ const ContactForm = () => {
             {isLoading
               ? "Loading..."
               : isSubmitted
-              ? "Submitted"
-              : "Send Message"}
+                ? "Submitted"
+                : "Send Message"}
           </button>
         </div>
       </form>

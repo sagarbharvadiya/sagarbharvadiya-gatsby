@@ -20,7 +20,7 @@ const Project = () => {
       <section id="projects">
         <div className="container">
           <h2>Projects</h2>
-          <div className="row">
+          <div className="tw-grid tw-gap-6 tw-grid-cols-1 md:tw-grid-cols-2 lg:tw-grid-cols-4">
             {menuItems.map((items) => {
               const { name, link } = items.fields;
               const image = items.fields.image.fields.file.url;
@@ -30,7 +30,7 @@ const Project = () => {
 
               return (
                 <React.Fragment key={id}>
-                  <div className="col-lg-3 col-md-4 col-sm-6">
+                  <div className="tw-w-full">
                     <Suspense fallback={<div>Loading...</div>}>
                       <LazyLoadedProject
                         name={name}

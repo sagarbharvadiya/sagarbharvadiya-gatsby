@@ -48,7 +48,7 @@ const AboutUs = () => {
               <div className="container">
                 <div className="tw-grid tw-grid-cols-1 md:tw-grid-cols-3 tw-gap-6 tw-mt-14">
                   {skills.map((item, i) => {
-                    const { title, description } = item.fields;
+                    const { title, description, link } = item.fields;
                     const richTextContent =
                       documentToReactComponents(description);
                     return (
@@ -56,10 +56,12 @@ const AboutUs = () => {
                         key={i}
                         className="bg-card tw-rounded-lg tw-p-6 tw-border-solid"
                       >
-                        <h3 className="tw-text-2xl tw-font-bold">{title}</h3>
-                        <p className="tw-text-muted-foreground">
-                          {richTextContent}
-                        </p>
+                        <a href={link} target="_blank" className="!tw-text-white tw-no-underline">
+                          <h3 className="tw-text-2xl tw-font-bold">{title}</h3>
+                          <p className="tw-text-muted-foreground">
+                            {richTextContent}
+                          </p>
+                        </a>
                       </div>
                     );
                   })}

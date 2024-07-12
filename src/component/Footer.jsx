@@ -67,13 +67,13 @@ const Footer = () => {
       <div className="container tw-flex tw-justify-between tw-items-center">
         <p className="tw-text-muted-foreground">&copy; {currentYear} Sagar. All rights reserved.</p>
         <div className="tw-flex tw-gap-4">
-          <a href="https://github.com/your-username" className="tw-text-muted-foreground hover:tw-text-primary-foreground">
+          <a href="https://github.com/sagarbharvadiya/" className="tw-text-muted-foreground hover:tw-text-primary-foreground">
             <GithubIcon className="tw-h-6 tw-w-6" />
           </a>
-          <a href="https://linkedin.com/in/your-username" className="tw-text-muted-foreground hover:tw-text-primary-foreground">
+          <a href="https://bit.ly/sagar-linkedin" className="tw-text-muted-foreground hover:tw-text-primary-foreground">
             <LinkedinIcon className="tw-h-6 tw-w-6" />
           </a>
-          <a href="https://twitter.com/your-username" className="tw-text-muted-foreground hover:tw-text-primary-foreground">
+          <a href="https://x.com/Sbharvadiya31" className="tw-text-muted-foreground hover:tw-text-primary-foreground">
             <TwitterIcon className="tw-h-6 tw-w-6" />
           </a>
         </div>

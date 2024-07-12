@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push } from 'firebase/database';
 import emailjs from "@emailjs/browser";
-
+// import SuccessMessage from './SuccessMessage';
 const firebaseConfig = {
   apiKey: process.env.GATSBY_YOUR_API_KEY,
   authDomain: process.env.GATSBY_YOUR_AUTH_DOMAIN,
@@ -26,6 +26,7 @@ const ContactFormNew = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
 
   // Email.js credentials
   const emailJsServiceId =  process.env.GATSBY_EMIALJS_SERVICEID;
@@ -43,8 +44,8 @@ const ContactFormNew = () => {
         message: `New form submission \nName: ${fName}\nEmail: ${email}\nSubject: ${sub}\nMessage: ${mes}`,
       };
 
-      // Replace 'your_emailjs_service_id', 'your_emailjs_template_id', and 'your_emailjs_user_id' with your actual EmailJS credentials
-      await emailjs.send(emailJsServiceId, emailJsTemplateId, emailParams, emailJsUserId);
+       // Replace 'your_emailjs_service_id', 'your_emailjs_template_id', and 'your_emailjs_user_id' with your actual EmailJS credentials
+       await emailjs.send(emailJsServiceId, emailJsTemplateId, emailParams, emailJsUserId);
 
       console.log('Notification email sent successfully');
     } catch (error) {
@@ -52,15 +53,18 @@ const ContactFormNew = () => {
     }
   };
 
-
   const validateForm = () => {
     const { fName, email, sub, mes } = details;
+    const newErrors = {};
 
-    if (fName.trim() === '' || email.trim() === '' || sub.trim() === '' || mes.trim() === '') {
-      return false;
-    }
+    if (fName.trim() === '') newErrors.fName = true;
+    if (email.trim() === '') newErrors.email = true;
+    if (sub.trim() === '') newErrors.sub = true;
+    if (mes.trim() === '') newErrors.mes = true;
 
-    return true;
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
   };
 
   const postData = async (e) => {
@@ -82,9 +86,8 @@ const ContactFormNew = () => {
         mes,
       });
 
-      await sendNotificationEmail(); // Add this line to send notification email
+      await sendNotificationEmail();
 
-      // Reset the form fields
       setDetails({
         fName: '',
         email: '',
@@ -93,13 +96,13 @@ const ContactFormNew = () => {
       });
 
       setSubmitted(true);
-      alert('Data posted successfully');
     } catch (error) {
       console.error('Error posting data:', error);
     } finally {
       setIsSubmitting(false);
     }
   };
+
 
   return (
     <>
@@ -109,7 +112,7 @@ const ContactFormNew = () => {
             <input
               type="text"
               name="user_name"
-              className="form-control"
+              className={`form-control ${errors.fName && details.fName === '' ? 'border-red-500' : ''}`}
               id="name"
               placeholder="Your Name"
               value={details.fName}
@@ -122,7 +125,7 @@ const ContactFormNew = () => {
             <input
               type="email"
               name="user_email"
-              className="form-control"
+              className={`form-control ${errors.email && details.email === '' ? 'border-red-500' : ''}`}
               id="email"
               placeholder="Your Email"
               value={details.email}
@@ -135,7 +138,7 @@ const ContactFormNew = () => {
         <div className="form-group mt-3">
           <input
             type="text"
-            className="form-control"
+            className={`form-control ${errors.sub && details.sub === '' ? 'border-red-500' : ''}`}
             name="subject"
             id="subject"
             placeholder="Subject"
@@ -147,7 +150,7 @@ const ContactFormNew = () => {
         </div>
         <div className="form-group mt-3">
           <textarea
-            className="form-control"
+            className={`form-control ${errors.mes && details.mes === '' ? 'border-red-500' : ''}`}
             name="message"
             rows="6"
             placeholder="Message"
@@ -159,10 +162,24 @@ const ContactFormNew = () => {
         </div>
         <div className="my-3"></div>
         <div className="text-center">
-          <button type="submit" onClick={postData} disabled={isSubmitting || submitted} className='btn btn-success'>
-            {isSubmitting ? 'Submitting...' : submitted ? 'Submitted' : 'Submit'}
+          <button className='contact-btn tw-text-lg tw-text-white tw-px-4 tw-py-3 tw-flex tw-items-center tw-rounded-2xl tw-overflow-hidden tw-transition-all tw-duration-300 tw-ease-in-out tw-pl-3 tw-bg-blue-600' onClick={postData} disabled={isSubmitting || submitted}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              className='tw-transition-all tw-duration-300 tw-ease-in-out tw-block tw-origin-center'
+            >
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path
+                fill="currentColor"
+                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+              ></path>
+            </svg>
+            <span className='tw-block tw-ml-1 tw-transition-all tw-duration-300 tw-ease-in-out'>{isSubmitting ? 'Submitting...' : submitted ? 'Submitted' : 'Submit'}</span>
           </button>
         </div>
+      {/* {submitted && <SuccessMessage />} */}
       </form>
     </>
   );

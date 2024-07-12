@@ -17,10 +17,10 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="tw-w-full tw-py-24 tw-bg-muted" id="services">
+    <section className="tw-w-full tw-py-2 lg:tw-py-24 tw-bg-muted" id="services">
       <div className="container">
         <div className="tw-space-y-4 tw-mb-12">
-          <h2 className="tw-text-4xl tw-font-bold">My Services</h2>
+          <h2 className="tw-text-4xl tw-font-bold">MY SERVICES</h2>
           <p className="tw-text-muted-foreground">
             Here are the services I offer to help you build your dream web application.
           </p>
@@ -32,9 +32,9 @@ const Services = () => {
             const richTextContent = documentToReactComponents(description);
 
             return (
-              <div className="bg-card tw-rounded-lg tw-p-6 tw-shadow-lg" key={id}>
+              <div className="bg-card tw-rounded-lg" key={id}>
                 {image && (
-                  <div className="tw-relative tw-h-48 tw-overflow-hidden tw-rounded-lg">
+                  <div className="tw-relative tw-w-full tw-h-auto lg:tw-h-60 tw-overflow-hidden tw-rounded-lg  tw-rounded-bl-none tw-rounded-br-none ">
                     <img
                       src={image.fields.file.url}
                       alt={image.fields.title}
@@ -42,7 +42,7 @@ const Services = () => {
                     />
                   </div>
                 )}
-                <div className="tw-mt-4 tw-space-y-2">
+                <div className="tw-mt-4 tw-p-6 tw-space-y-2">
                   <h3 className="tw-text-2xl tw-font-bold">{title}</h3>
                   <div className="tw-text-muted-foreground">
                     {richTextContent}
